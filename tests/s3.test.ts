@@ -39,6 +39,6 @@ describe('generatePresignedUrl', () => {
   })
 
   test('returns a presigned url', () => {
-    expect(generatePresignedUrl('foo')).resolves.toBe('foo?mocked-presign')
+    expect(generatePresignedUrl('foo')).toBe('foo?mocked-presign')
   })
 })

@@ -14,6 +14,6 @@ export async function handleRequest(req: Request) {
     }
   }
 
-  const presignedUrl = await generatePresignedUrl(key)
+  const presignedUrl = generatePresignedUrl(key)
   return redirect(presignedUrl)
 }
