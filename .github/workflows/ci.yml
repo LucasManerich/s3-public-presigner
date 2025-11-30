@@ -1,0 +1,36 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - run: bun test
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - run: bun check:ci
+
+  smoketest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - name: Start the server
+        run: bun start &
+      - name: Check that server starts
+        run: bunx wait-on@9.0.3 tcp:localhost:3000 --timeout 10000

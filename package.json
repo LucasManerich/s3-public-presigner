@@ -1,0 +1,23 @@
+{
+  "name": "s3-public-presigner",
+  "version": "1.0.0",
+  "description": "Service that redirects public URLs to presigned S3 URLs",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "test": "bun test",
+    "test:watch": "bun --watch test",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint --write .",
+    "lint:check": "biome lint .",
+    "check": "biome check --write .",
+    "check:ci": "biome ci ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@types/bun": "latest"
+  }
+}
