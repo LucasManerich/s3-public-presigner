@@ -83,6 +83,15 @@ File not found
 
 Setting this increases the latency of the service slightly, because it needs to first look up if the object exists.
 
+## How to use yourself
+
+- Install bun
+- Install dependencies with `bun install`
+- Configure environment variables (see above)
+- Start the server with `bun start`
+
+To contribue, check out [CONTRIBUTING.md](./CONTRIBUTING.md)
+
 ## License
 
 MIT
