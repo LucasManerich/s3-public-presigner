@@ -4,10 +4,20 @@ A small service that redirects public URLs to presigned S3 URLs. The public path
 
 Deploy it on Railway to make private files in buckets publicly accessible.
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/YU0MBp?utm_medium=integration&utm_source=template&utm_campaign=generic)
+
+## Demo
+
+Open this image:
+
+https://bucket-public-presigner-demo.up.railway.app/duck.png
+
+It's stored in a private bucket. The URL redirects to a presigned URL. If you're using Railway Buckets, the egress will be free.
+
 ## Features
 
 - Use public URLs to access private files in buckets, save on service egress
-- Use your own domain for nice URLs
+- Add your custom domain to the service for nice URLs
 - Fast request handling with Bun runtime
 - Opt-in to 404 handling
 - Presigned URL generation with configurable expiration
