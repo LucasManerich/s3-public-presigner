@@ -33,4 +33,4 @@ jobs:
       - name: Start the server
         run: bun start &
       - name: Check that server starts
-        run: bunx wait-on@9.0.3 tcp:localhost:3000 --timeout 10000
+        run: bunx wait-on@9.0.3 http://localhost:3000/_ah/up --timeout 10000

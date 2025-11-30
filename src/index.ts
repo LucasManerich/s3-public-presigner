@@ -8,6 +8,7 @@ Bun.serve({
   routes: {
     '/': () => notFound(),
     '/favicon.ico': () => notFound(),
+    '/_ah/up': () => new Response('up'),
   },
   fetch: (req) => handleRequest(req),
 })
