@@ -6,7 +6,7 @@ Deploy it on Railway to make private files in buckets publicly accessible.
 
 ## Features
 
-- Use public URLs to access private files in buckets
+- Use public URLs to access private files in buckets, save on service egress
 - Use your own domain for nice URLs
 - Fast request handling with Bun runtime
 - Opt-in to 404 handling
