@@ -12,11 +12,18 @@ describe('notFound', () => {
 })
 
 describe('redirect', () => {
-  test('returns status 302', () => {
-    expect(redirect('/foo').status).toBe(302)
+  test('returns status 307', () => {
+    expect(redirect('/foo').status).toBe(307)
   })
 
   test('redirects to the provided url', () => {
     expect(redirect('/foo').headers.get('location')).toBe('/foo')
+  })
+
+  test('includes cache-control header', () => {
+    const response = redirect('/foo')
+    const cacheControl = response.headers.get('cache-control')
+    expect(cacheControl).toContain('public')
+    expect(cacheControl).toContain('max-age=')
   })
 })
